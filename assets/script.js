@@ -6,7 +6,7 @@ let cc = 0      // Chocolate Chip
 let sugar = 0   // Sugar Sprinkle
 
 document.getElementById('add-gb').addEventListener('click', function() {
-    let addGb = Math.random() < 0.5
+    let addGb = + 1
     if (addGb) {
         document.getElementById("qty-gb").textContent = gb;
         document.getElementById("qty-total").textContent = gb;
@@ -18,7 +18,7 @@ document.getElementById('add-gb').addEventListener('click', function() {
 })
 
 document.getElementById("add-cc").addEventListener("click", function () {
-    let addCc = Math.random() < 0.5
+    let addCc = + 1
     if (addCc) {
         document.getElementById("qty-cc").textContent = cc;
         document.getElementById("qty-total").textContent = cc;
@@ -29,7 +29,7 @@ document.getElementById("add-cc").addEventListener("click", function () {
 })
 
 document.getElementById("add-sugar").addEventListener("click", function () {
-    let addSs = Math.random() < 0.5
+    let addSs = + 1
     if (addSs) {
         document.getElementById("qty-sugar").textContent = sugar;
         document.getElementById("qty-total").textContent = sugar;
@@ -40,7 +40,7 @@ document.getElementById("add-sugar").addEventListener("click", function () {
 })
 
 document.getElementById("minus-gb").addEventListener("click", function() {
-    let minusGb = Math.random() > 0.5
+    let minusGb = - 1
     if (minusGb) {
         document.getElementById("qty-gb").textContent = gb;
         document.getElementById("qty-total").textContent = gb;
@@ -51,7 +51,7 @@ document.getElementById("minus-gb").addEventListener("click", function() {
 })
 
 document.getElementById("minus-cc").addEventListener("click", function() {
-    let minusCc = Math.random() > 0.5
+    let minusCc = - 1
     if (minusCc) {
         document.getElementById("qty-cc").textContent = cc;
         document.getElementById("qty-total").textContent = cc;
@@ -62,7 +62,7 @@ document.getElementById("minus-cc").addEventListener("click", function() {
 })
 
 document.getElementById("minus-sugar").addEventListener("click", function() {
-    let minusSugar = Math.random() > 0.5
+    let minusSugar = - 1
     if (minusSugar) {
         document.getElementById("qty-sugar").textContent = sugar;
         document.getElementById("qty-total").textContent = sugar;
@@ -71,10 +71,16 @@ document.getElementById("minus-sugar").addEventListener("click", function() {
         console.log("minussugar")
     }
 
+totalCookiecount()
 let total = gb + cc + sugar
-document.getElementById("qty-total").textContent = total
+
+document.getElementById("qty-total").setAttribute(total)
 })  
 
+function totalCookiecount() {
+    document.getElementById("qty-total").textContent = gb + cc + sugar
+    
+}
 
 
 
